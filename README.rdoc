@@ -1,4 +1,5 @@
-# Commit2it
+### Commit2it
+
 ========
 - socially rewarding other's achievements
 ---
@@ -8,4 +9,4 @@ Whether it be losing weight, running a marathon, getting a job at a particular c
 
 You are not alone in your quest to be better, do better or feel better so share your story and let's help each other achieve amazing results!
 ---
-[link]: https://commit2it.herokuapp.com
+https://commit2it.herokuapp.com
