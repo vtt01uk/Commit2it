@@ -1,5 +1,4 @@
-### Commit2it
-
+*Commit2it*
 ========
 - socially rewarding other's achievements
 ---
@@ -7,6 +6,6 @@ Welcome to *Commit2it*; a crowdfunding platform where like-minded people help ea
 
 Whether it be losing weight, running a marathon, getting a job at a particular company or helping others at a shelter home, at Commit2it you will find others on similar journeys.
 
-You are not alone in your quest to be better, do better or feel better so share your story and let's help each other achieve amazing results!
+You are not alone in your quest to be better, do better or feel better so share your goals and let's help each other achieve amazing results!
 ---
 https://commit2it.herokuapp.com

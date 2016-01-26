@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 	root 'pages#index'
 	
 	get 'pages/about', to: 'pages#about'
-		
+	#Gives new goal path, post to create goals, edit goals, patch goals, delete goals, show goals and index goals path
+	resources :goals
 	
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
