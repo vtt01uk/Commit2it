@@ -1,0 +1,20 @@
+<h1>Listing all Goals</h1>
+<p><%= link_to "Create new goal", new_goal_path%></p>
+
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+	</tr>
+
+<!--Iterate through each goal created by user-->
+	<% @goals.each do |goal| %>
+	<tr>
+		<td><%= goal.title %></td>
+		<td><%= goal.description %></td>
+		<td><%= link_to 'Edit', edit_goal_path(goal)%></td>
+		<td><%= link_to 'Show', goal_path(goal)%></td>
+	</tr>
+	<% end %>
+</table>

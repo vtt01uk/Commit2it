@@ -1,3 +1,9 @@
 <h1>Goals</h1>
+
 <p>Title: <%= @goal.title %></p>
+
 <p>Title: <%= @goal.description %></p>
+
+<%= link_to 'Go Back', goals_path %> |
+<%= link_to 'Edit', edit_goal_path(@goal) %> 
+
