@@ -1,9 +1,9 @@
-# Commit2it - *socially rewarding others* #
-
-Welcome to **Commit2it**; a crowdfunding platform where like-minded people help each other their reach their goals and reward them for their accomplishments.
+# Commit2it - socially rewarding others
+---
+Welcome to *Commit2it*; a crowdfunding platform where like-minded people help each other their reach their goals and reward them for their accomplishments.
 
 Whether it be losing weight, running a marathon, getting a job at a particular company or helping others at a shelter home, at Commit2it you will find others on similar journeys.
 
 You are not alone in your quest to be better, do better or feel better so share your story and let's help each other achieve amazing results!
-
-[Link](https://commit2it.herokuapp.com/)
+---
+[Link]: https://commit2it.herokuapp.com/
