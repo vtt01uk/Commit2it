@@ -9,10 +9,21 @@ class GoalsController < ApplicationController
 #		render plain: params[:goal].inspect
 		#Create an instance variable with method
 		@goal = Goal.new(goal_params)
-		@goal.save
-		redirect_to goals_show(@goal)
+		if @goal.save
+			#do something
+			flash[:notice] = "You have created a new goal!"
+			redirect_to goal_path(@goal)
+		else
+			#do something else
+			render 'new'
+		end
 	end
 	
+	def show
+		#find the goal based on its id
+		@goal = Goal.find(params[:id])
+	end
+
 	private
 	#define the method
 	def goal_params

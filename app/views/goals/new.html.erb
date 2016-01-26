@@ -1,4 +1,15 @@
 <h1>Create a Goal</h1>
+
+<!--Display validation messages-->
+<% if @goal.errors.any? %>
+<h2>Error:</h2>
+<% @goal.errors.full_messages.each do |msg| %>
+<ul>
+	<li><%= msg %></li>
+</ul>
+<% end %>
+<% end %>
+
 <%= form_for @goal do |x|%>
 <p>
 	<%= x.label :title %><br>
