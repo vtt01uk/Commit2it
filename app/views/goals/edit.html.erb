@@ -1,28 +1,3 @@
 <h1>Edit existing Goal</h1>
-
-<!--Display validation messages-->
-<% if @goal.errors.any? %>
-<h2>Error:</h2>
-<% @goal.errors.full_messages.each do |msg| %>
-<ul>
-	<li><%= msg %></li>
-</ul>
-<% end %>
-<% end %>
-
-<!--Display form-->
-<%= form_for @goal do |x|%>
-<p>
-	<%= x.label :title %><br>
-	<%= x.text_field :title %>
-</p>
-<p>
-	<%= x.label :description %><br>
-	<%= x.text_area :description %>
-</p>
-<p>
-	<%= x.submit %>
-</p>
-<% end %>
-
-<%= link_to 'Go Back', goals_path %>
+<!--refactored form into partial-->
+<%= render 'form' %>

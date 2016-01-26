@@ -46,6 +46,13 @@ class GoalsController < ApplicationController
 		@goal = Goal.find(params[:id])
 	end
 
+	def destroy
+		@goal = Goal.find(params[:id])
+		@goal.destroy
+		flash[:notice] = "Goal was deleted"
+		redirect_to goals_path
+	end
+	
 	private
 	#define the method
 	def goal_params
