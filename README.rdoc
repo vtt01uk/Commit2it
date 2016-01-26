@@ -1,8 +1,7 @@
-Commit2it 
-=========
-socially rewarding other's achievements
-
-
+#Commit2it
+========
+- socially rewarding other's achievements
+---
 Welcome to *Commit2it*; a crowdfunding platform where like-minded people help each other their reach their goals and reward them for their accomplishments.
 
 Whether it be losing weight, running a marathon, getting a job at a particular company or helping others at a shelter home, at Commit2it you will find others on similar journeys.
