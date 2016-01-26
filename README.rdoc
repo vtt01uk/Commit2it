@@ -1,28 +1,5 @@
-== README
+Commit2it Blog - Say what you mean, mean what you say and be rewarded
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Commit2it; where like-minded people help each other their rearch their goals.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+You are not alone in your quest to be better, do better or feel better. Here you will find others on the same path whether it be losing weight, cooking more dishes, getting out of bed earlier, running a marathon or reading a dozen books a year.
