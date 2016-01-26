@@ -1,4 +1,6 @@
 class GoalsController < ApplicationController
+	#Ensure the set_goal method is called before the other methods are actioned
+	before_action :set_goal, only: [:edit, :update, :show, :destroy]
 	
 	def index
 		#grab all the goals
@@ -11,7 +13,6 @@ class GoalsController < ApplicationController
 	
 	def edit
 		#find the goal based on its id
-		@goal = Goal.find(params[:id])
 	end
 	
 	def create
@@ -31,7 +32,7 @@ class GoalsController < ApplicationController
 	end
 
 	def update
-		@goal = Goal.find(params[:id])
+
 		if @goal.update(goal_params)
 			flash[:notice] = "You have edited your goal"
 			#redirect to goal show page
@@ -43,17 +44,22 @@ class GoalsController < ApplicationController
 		
 	def show
 		#find the goal based on its id
-		@goal = Goal.find(params[:id])
+
 	end
 
 	def destroy
-		@goal = Goal.find(params[:id])
+
 		@goal.destroy
 		flash[:notice] = "Goal was deleted"
 		redirect_to goals_path
 	end
 	
 	private
+	
+	def set_goal
+		@goal = Goal.find(params[:id])
+	end
+	
 	#define the method
 	def goal_params
 		params.require(:goal).permit(:title, :description)
