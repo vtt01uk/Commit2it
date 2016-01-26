@@ -1,4 +1,4 @@
-#Commit2it
+# Commit2it
 ========
 - socially rewarding other's achievements
 ---
