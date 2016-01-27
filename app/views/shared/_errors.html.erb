@@ -1,0 +1,23 @@
+<!--Display validation messages-->
+<% if obj.errors.any? %>
+<!--Style the validation errors-->
+<div class="row">
+	<div class="col-xs-8 col-xs-offset-2">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h2 class="panel-title">
+<!--Use pluralize method to give the number of errors occured and display error or errors-->
+					<%= pluralize(obj.errors.count, "error") %> prohibited this goal from being created: 
+					</h2>
+					<div class="panel-body">
+						<ul>
+							<% obj.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+								<% end %>								
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

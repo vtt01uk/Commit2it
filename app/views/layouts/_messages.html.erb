@@ -1,7 +1,13 @@
-	<% flash.each do |name, msg| %>
-	<ul>
-		<li>
-			<%= msg %>
-		</li>
-	</ul>
-	<% end %>
+<!--Styling this partial-->
+<div class="row">
+	<div class="col-xs-10 col-xs-offset-1">
+		<% flash.each do |name, msg| %>
+<!--Displays the appropriate danger, alert or success messages-->
+		<div class='alert alert-<%="#{name}" %>'>
+<!--Display the bang symbol if the message is danger-->
+			<a href="#" class="close" data-dismiss="alert">&#215;</a>
+			<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+		</div>
+		<% end %>
+	</div>
+</div>

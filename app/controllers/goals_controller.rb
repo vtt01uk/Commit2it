@@ -23,7 +23,7 @@ class GoalsController < ApplicationController
 		@goal = Goal.new(goal_params)
 		if @goal.save
 			#do something
-			flash[:notice] = "You have created a new goal!"
+			flash[:success] = "You have created a new goal!"
 			redirect_to goal_path(@goal)
 		else
 			#do something else
@@ -34,7 +34,7 @@ class GoalsController < ApplicationController
 	def update
 
 		if @goal.update(goal_params)
-			flash[:notice] = "You have edited your goal"
+			flash[:success] = "You have edited your goal"
 			#redirect to goal show page
 			redirect_to goal_path(@goal)
 		else
@@ -50,7 +50,7 @@ class GoalsController < ApplicationController
 	def destroy
 
 		@goal.destroy
-		flash[:notice] = "Goal was deleted"
+		flash[:danger] = "Goal was deleted"
 		redirect_to goals_path
 	end
 	
