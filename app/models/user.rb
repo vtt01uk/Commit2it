@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+	#Defining 1:many association
+	has_many :goals
+	#before the user accesses the database, it will save the email address in lowercase before saving it in the db
+	before_save { self.email = email.downcase }
 	#Validate username
 	validates :username, presence: true,
 						uniqueness: { case_sensitive: false }, 

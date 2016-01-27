@@ -16,11 +16,15 @@ class GoalsController < ApplicationController
 	end
 	
 	def create
+		#Using gemfile called 'byebug'
+		debugger 
 		#Display what has been passed in into the controller
 		#
 #		render plain: params[:goal].inspect
 		#Create an instance variable with method
 		@goal = Goal.new(goal_params)
+		@goal.user = User.first
+	
 		if @goal.save
 			#do something
 			flash[:success] = "You have created a new goal!"
