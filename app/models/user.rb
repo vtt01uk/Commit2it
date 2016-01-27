@@ -13,4 +13,6 @@ class User < ActiveRecord::Base
 						uniqueness: { case_sensitive: false },
 	#Check email format
 						format: { with: VALID_EMAIL_REGEX }
+	#Method for password authentication
+	has_secure_password
 end
