@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 	root 'pages#home'
 	
-	get 'pages/about', to: 'pages#about'
+	get 'about', to: 'pages#about'
 	#Gives new goal path, post to create goals, edit goals, patch goals, delete goals, show goals and index goals path
 	resources :goals
+	
+	get 'signup', to: 'users#new'
+#	post 'users', to: 'users#create'
+	resources :users, except:[:new]
 	
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
