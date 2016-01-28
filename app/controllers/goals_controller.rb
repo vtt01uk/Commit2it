@@ -3,8 +3,8 @@ class GoalsController < ApplicationController
 	before_action :set_goal, only: [:edit, :update, :show, :destroy]
 	
 	def index
-		#grab all the goals
-		@goals = Goal.all
+		#Display 5 items per page using pagination
+		@goals = Goal.paginate(page: params[:page], per_page: 5)
 	end
 	
 	def new
@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
 	
 	def create
 		#Using gemfile called 'byebug'
-		debugger 
+#		debugger 
 		#Display what has been passed in into the controller
 		#
 #		render plain: params[:goal].inspect

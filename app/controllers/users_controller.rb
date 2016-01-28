@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = User.all
+		@users = User.paginate(page: params[:page], per_page: 5)
 	end
 	
 	def new
@@ -35,6 +35,8 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
+		#Grab all the user's goals by pagination
+		@user_goals = @user.goals.paginate(page: params[:page], per_page: 5)
 	end
 	
 	
