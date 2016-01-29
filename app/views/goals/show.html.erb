@@ -33,7 +33,7 @@
 	<%= simple_format(@goal.description)%>
 
 	<div class="goal-actions">
-			<% if logged_in? && current_user == @goal.user %>
+		<% if logged_in? && (current_user == @goal.user || current_user.admin?) %>
 						<%= link_to 'Edit this goal', edit_goal_path(@goal), class: "btn btn-xs btn-primary" %> 
 		<%= link_to 'Delete this goal', goal_path(@goal), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-xs btn-danger" %>
 		<% end %>

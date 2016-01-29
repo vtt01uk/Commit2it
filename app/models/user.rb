@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	#Defining 1:many association
-	has_many :goals
+	#Whatever goals the user has, it will destroy them if they are deleted
+	has_many :goals, dependent: :destroy
 	#before the user accesses the database, it will save the email address in lowercase before saving it in the db
 	before_save { self.email = email.downcase }
 	#Validate username
