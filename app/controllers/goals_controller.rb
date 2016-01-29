@@ -17,7 +17,7 @@ class GoalsController < ApplicationController
 	
 	def create
 		#Using gemfile called 'byebug'
-#		debugger 
+#debugger 
 		#Display what has been passed in into the controller
 		#
 #		render plain: params[:goal].inspect
