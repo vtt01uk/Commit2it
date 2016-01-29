@@ -1,7 +1,9 @@
 class GoalsController < ApplicationController
 	#Ensure the set_goal method is called before the other methods are actioned
 	before_action :set_goal, only: [:edit, :update, :show, :destroy]
-	
+	before_action :require_user, except: [:index, :show]
+	before_action :require_same_user, only: [:edit, :update, :destroy]
+
 	def index
 		#Display 5 items per page using pagination
 		@goals = Goal.paginate(page: params[:page], per_page: 5)
@@ -23,8 +25,8 @@ class GoalsController < ApplicationController
 #		render plain: params[:goal].inspect
 		#Create an instance variable with method
 		@goal = Goal.new(goal_params)
-		@goal.user = User.first
-	
+		#the creator of the goal will be associated as the current user
+		@goal.user = current_user
 		if @goal.save
 			#do something
 			flash[:success] = "You have created a new goal!"
@@ -36,9 +38,9 @@ class GoalsController < ApplicationController
 	end
 
 	def update
-
+		#Perform validations
 		if @goal.update(goal_params)
-			flash[:success] = "You have edited your goal"
+			flash[:success] = "Goal was successfully updated"
 			#redirect to goal show page
 			redirect_to goal_path(@goal)
 		else
@@ -68,5 +70,13 @@ class GoalsController < ApplicationController
 	def goal_params
 		params.require(:goal).permit(:title, :description)
 	end
+	
+	def require_same_user
+		if current_user != @goal.user
+			flash[:danger] = "You can only edit or delete your own goal"
+			redirect_to root_path
+		end
+	end
+	
 end
 
