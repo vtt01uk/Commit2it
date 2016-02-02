@@ -49,8 +49,6 @@ class GoalsController < ApplicationController
 	end
 		
 	def show
-		#find the goal based on its id
-
 	end
 
 	def destroy
@@ -68,7 +66,7 @@ class GoalsController < ApplicationController
 	
 	#define the method
 	def goal_params
-		params.require(:goal).permit(:title, :description)
+		params.require(:goal).permit(:title, :description, category_ids:[])
 	end
 	
 	def require_same_user
